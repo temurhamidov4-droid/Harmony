@@ -1,143 +1,355 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Harmony Aesthetic Clinic</title>
-  <style>
-    :root {
-      --bg: #0f0e0d;
-      --card: #1a1816;
-      --card-hover: #231f1c;
-      --gold: #c9a96e;
-      --text: #f4efe8;
-      --muted: #9a9187;
-      --line: rgba(201, 169, 110, 0.25);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #1d1a16 0%, var(--bg) 60%);
-      color: var(--text);
-      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 40px 16px;
-    }
-    .wrap { width: 100%; max-width: 440px; }
-    header { text-align: center; margin-bottom: 32px; }
-    header h1 {
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    header p { margin-top: 8px; color: var(--muted); font-size: 14px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f5ef">
+<title>Harmony Aesthetic Clinic</title>
 
-    .links-list { list-style: none; display: grid; gap: 12px; }
-    .link {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 16px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      color: inherit;
-      text-decoration: none;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .link:hover, .link:focus-visible {
-      background: var(--card-hover);
-      border-color: var(--gold);
-      transform: translateY(-1px);
-      outline: none;
-    }
-    .link:active { transform: scale(0.985); }
-    .iconbox {
-      flex: none;
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      font-size: 20px;
-      border-radius: 12px;
-      background: rgba(201, 169, 110, 0.12);
-    }
-    .copy { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-    .label { font-size: 16px; font-weight: 600; }
-    .hint { font-size: 13px; color: var(--muted); }
-    .arrow { flex: none; font-size: 24px; color: var(--gold); }
-  </style>
+<style>
+:root {
+  --bg: #f7f5ef;
+  --white: #fffefa;
+  --black: #25251f;
+  --gold: #b49a6b;
+  --muted: #85847d;
+  --border: #e8e2d6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, #eae6d9, transparent 55%),
+    var(--bg);
+  font-family: Arial, sans-serif;
+  color: var(--black);
+  padding: 25px 16px;
+}
+
+.container {
+  max-width: 430px;
+  margin: auto;
+  padding: 28px 23px 24px;
+  background: rgba(255,254,250,.94);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  box-shadow: 0 15px 45px rgba(50,40,20,.07);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+.logo-icon {
+  width: 125px;
+  height: 145px;
+  margin: 0 auto 13px;
+}
+
+.logo-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.brand {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  letter-spacing: 7px;
+  font-weight: normal;
+}
+
+.brand-sub {
+  font-size: 11px;
+  letter-spacing: 6px;
+  margin-top: 7px;
+  color: #77746c;
+}
+
+.line {
+  width: 65px;
+  height: 1px;
+  background: var(--gold);
+  margin: 17px auto;
+}
+
+.heading {
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  margin-top: 24px;
+}
+
+.highlight {
+  display: block;
+  color: var(--gold);
+  font-size: 25px;
+  margin-top: 8px;
+}
+
+.description {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 15px 0 25px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  padding: 11px 13px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  text-decoration: none;
+  color: var(--black);
+  transition: .25s ease;
+}
+
+.link:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 17px rgba(80,60,30,.06);
+}
+
+.icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: #f2efe7;
+  color: #87734f;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.link-divider {
+  height: 36px;
+  width: 1px;
+  background: var(--border);
+  margin: 0 13px;
+}
+
+.link-text {
+  flex: 1;
+}
+
+.link-title {
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.link-subtitle {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.arrow {
+  color: var(--gold);
+  font-size: 25px;
+  padding-left: 7px;
+}
+
+.phone {
+  font-size: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  color: #8b897f;
+}
+
+.footer-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.footer-text {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.bottom {
+  text-align: center;
+  color: #b4a68e;
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 13px;
+}
+
+@media(max-width:360px) {
+  .container {
+    padding: 23px 15px;
+  }
+  .brand {
+    font-size: 25px;
+  }
+  .phone {
+    font-size: 9px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Harmony</h1>
-      <p>Aesthetic Clinic</p>
-    </header>
 
-    <nav class="links" aria-label="Ссылки клиники">
-      <ul class="links-list">
+<main class="container">
 
-        <li>
-          <a class="link" href="https://go.2gis.com/ekC3q" target="_blank" rel="noopener noreferrer">
-            <span class="iconbox" aria-hidden="true">📍</span>
-            <span class="copy">
-              <span class="label">Оставить отзыв в 2GIS</span>
-              <span class="hint">Это займёт 30 секунд</span>
-            </span>
-            <span class="arrow" aria-hidden="true">›</span>
-          </a>
-        </li>
+  <header class="logo">
 
-        <li>
-          <a class="link" href="https://yandex.uz/maps/-/CXGSITJD" target="_blank" rel="noopener noreferrer">
-            <span class="iconbox" aria-hidden="true">📍</span>
-            <span class="copy">
-              <span class="label">Отзыв на Яндекс Картах</span>
-              <span class="hint">Поделитесь впечатлением</span>
-            </span>
-            <span class="arrow" aria-hidden="true">›</span>
-          </a>
-        </li>
+    <div class="logo-icon">
+      <svg viewBox="0 0 130 145" fill="none"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="M65 4 C25 4 10 27 10 60 V86 C10 120 30 140 65 140 C100 140 120 120 120 86 V60 C120 27 105 4 65 4Z"
+              stroke="#25251f" stroke-width="2"/>
+        <path d="M65 17 C34 17 22 35 22 62 V85 C22 111 38 127 65 127 C92 127 108 111 108 85 V62 C108 35 96 17 65 17Z"
+              stroke="#25251f" stroke-width="1.5"/>
+        <text x="65" y="34" text-anchor="middle"
+              font-size="12" letter-spacing="4"
+              fill="#25251f">HARMONY</text>
+        <text x="65" y="102" text-anchor="middle"
+              font-family="Georgia" font-size="65"
+              fill="#25251f">H</text>
+        <path d="M67 42 C48 65 51 86 68 106 M67 75 C83 64 88 52 87 42 M67 85 C85 81 94 70 96 61"
+              stroke="#8d987f" stroke-width="1.4"/>
+        <path d="M67 61 C57 53 54 47 55 42 M67 77 C57 74 51 67 50 61 M72 94 C85 93 91 87 94 80"
+              stroke="#8d987f" stroke-width="1.2"/>
+        <text x="65" y="119" text-anchor="middle"
+              font-size="10" letter-spacing="1.5"
+              fill="#25251f">AESTHETIC CLINIC</text>
+      </svg>
+    </div>
 
-        <li>
-          <a class="link" href="https://maps.app.goo.gl/o28YTKjPi8ZiqtvG6" target="_blank" rel="noopener noreferrer">
-            <span class="iconbox" aria-hidden="true">🌐</span>
-            <span class="copy">
-              <span class="label">Отзыв в Google Maps</span>
-              <span class="hint">Оцените нас</span>
-            </span>
-            <span class="arrow" aria-hidden="true">›</span>
-          </a>
-        </li>
+    <div class="brand">HARMONY</div>
+    <div class="brand-sub">AESTHETIC CLINIC</div>
 
-        <li>
-          <a class="link" href="https://www.instagram.com/harmony.aesthetic.clinic/" target="_blank" rel="noopener noreferrer">
-            <span class="iconbox" aria-hidden="true">📸</span>
-            <span class="copy">
-              <span class="label">Наш Instagram</span>
-              <span class="hint">Работы и новости клиники</span>
-            </span>
-            <span class="arrow" aria-hidden="true">›</span>
-          </a>
-        </li>
+    <div class="line"></div>
 
-        <li>
-          <a class="link" href="tel:+998981071000">
-            <span class="iconbox" aria-hidden="true">📞</span>
-            <span class="copy">
-              <span class="label">Позвонить</span>
-              <span class="hint">+998 98 107 10 00</span>
-            </span>
-            <span class="arrow" aria-hidden="true">›</span>
-          </a>
-        </li>
+  </header>
 
-      </ul>
-    </nav>
-  </div>
+  <section>
+    <h1 class="heading">
+      ОСТАВЬТЕ ОТЗЫВ
+      <span class="highlight">В ОДНО КАСАНИЕ!</span>
+    </h1>
+
+    <p class="description">
+      Ваше мнение очень важно для нас! ♡
+      <br>
+      Поделитесь впечатлениями о посещении клиники.
+    </p>
+  </section>
+
+  <nav class="links">
+
+    <a class="link"
+       href="https://go.2gis.com/ekC3q"
+       target="_blank" rel="noopener">
+      <span class="icon">2G</span>
+      <span class="link-divider"></span>
+      <span class="link-text">
+        <span class="link-title">Отзыв для 2GIS</span>
+        <span class="link-subtitle">Перейти к отзыву</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link"
+       href="https://yandex.uz/maps/-/CXGSITJD"
+       target="_blank" rel="noopener">
+      <span class="icon">Я</span>
+      <span class="link-divider"></span>
+      <span class="link-text">
+        <span class="link-title">Отзыв для Yandex</span>
+        <span class="link-subtitle">Перейти к отзыву</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link"
+       href="https://maps.app.goo.gl/o28YTKjPi8ZiqtvG6"
+       target="_blank" rel="noopener">
+      <span class="icon">G</span>
+      <span class="link-divider"></span>
+      <span class="link-text">
+        <span class="link-title">Отзыв для Google</span>
+        <span class="link-subtitle">Перейти к отзыву</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link"
+       href="https://www.instagram.com/harmony.aesthetic.clinic/"
+       target="_blank" rel="noopener">
+      <span class="icon">◎</span>
+      <span class="link-divider"></span>
+      <span class="link-text">
+        <span class="link-title">Наш Instagram</span>
+        <span class="link-subtitle">Перейти в профиль</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link" href="tel:+998981071000">
+      <span class="icon">☎</span>
+      <span class="link-divider"></span>
+      <span class="link-text">
+        <span class="link-title">Связаться с нами</span>
+        <span class="link-subtitle">Позвоните нам</span>
+      </span>
+      <span class="phone">+998 98 107 10 00</span>
+      <span class="arrow">›</span>
+    </a>
+
+  </nav>
+
+  <footer>
+    <div class="footer">
+      <span class="footer-line"></span>
+      <span class="footer-text">Спасибо, что вы с нами! ♡</span>
+      <span class="footer-line"></span>
+    </div>
+
+    <div class="bottom">
+      HARMONY AESTHETIC CLINIC
+    </div>
+  </footer>
+
+</main>
+
 </body>
 </html>
+
