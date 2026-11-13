@@ -1,49 +1,72 @@
-<nav class="links" aria-label="Ссылки клиники">
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harmony Aesthetic Clinic</title>
+  <style>
+    :root {
+      --bg: #0f0e0d;
+      --card: #1a1816;
+      --card-hover: #231f1c;
+      --gold: #c9a96e;
+      --text: #f4efe8;
+      --muted: #9a9187;
+      --line: rgba(201, 169, 110, 0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1d1a16 0%, var(--bg) 60%);
+      color: var(--text);
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+    .wrap { width: 100%; max-width: 440px; }
+    header { text-align: center; margin-bottom: 32px; }
+    header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    header p { margin-top: 8px; color: var(--muted); font-size: 14px; }
 
-  <a class="link" href="https://go.2gis.com/ekC3q" target="_blank" rel="noopener">
-    <span class="iconbox">📍</span>
-    <span class="copy">
-      <span class="label">Отзыв для 2GIS</span>
-      <span class="hint">Перейти к отзыву</span>
-    </span>
-    <span class="arrow">›</span>
-  </a>
-
-  <a class="link" href="https://yandex.uz/maps/-/CXGSITJD" target="_blank" rel="noopener">
-    <span class="iconbox">📍</span>
-    <span class="copy">
-      <span class="label">Отзыв для Yandex</span>
-      <span class="hint">Перейти к отзыву</span>
-    </span>
-    <span class="arrow">›</span>
-  </a>
-
-  <a class="link" href="https://maps.app.goo.gl/o28YTKjPi8ZiqtvG6" target="_blank" rel="noopener">
-    <span class="iconbox">🌐</span>
-    <span class="copy">
-      <span class="label">Отзыв для Google</span>
-      <span class="hint">Перейти к отзыву</span>
-    </span>
-    <span class="arrow">›</span>
-  </a>
-
-  <a class="link" href="https://www.instagram.com/harmony.aesthetic.clinic/" target="_blank" rel="noopener">
-    <span class="iconbox">📸</span>
-    <span class="copy">
-      <span class="label">Наш Instagram</span>
-      <span class="hint">Перейти в профиль</span>
-    </span>
-    <span class="arrow">›</span>
-  </a>
-
-  <a class="link" href="tel:+998981071000">
-    <span class="iconbox">📞</span>
-    <span class="copy">
-      <span class="label">Связаться с нами</span>
-      <span class="hint">Позвоните нам</span>
-    </span>
-    <span class="phone">+998 98 107 10 00</span>
-    <span class="arrow">›</span>
-  </a>
-
-</nav>
+    .links-list { list-style: none; display: grid; gap: 12px; }
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      color: inherit;
+      text-decoration: none;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .link:hover, .link:focus-visible {
+      background: var(--card-hover);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .link:active { transform: scale(0.985); }
+    .iconbox {
+      flex: none;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      border-radius: 12px;
+      background: rgba(201, 169, 110, 0.12);
+    }
+    .copy { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+    .label { font-size: 16px; font-weight: 600; }
+    .hint { font-size: 13px; color: var(--muted); }
+    .arrow { flex: none; font-size:
+      
